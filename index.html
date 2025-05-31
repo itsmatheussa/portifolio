@@ -21,7 +21,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #000000;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -36,8 +36,26 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: float 20s ease-in-out infinite;
+            background-image: 
+                linear-gradient(0deg, rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: center center;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(0deg, rgba(255,255,255,0.05) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 2px, transparent 2px);
+            background-size: 100px 100px;
+            background-position: center center;
+            opacity: 0.5;
         }
 
         @keyframes float {
@@ -83,10 +101,11 @@
             display: inline-block;
             background: linear-gradient(45deg, #ff6b6b, #ee5a24);
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
@@ -99,33 +118,54 @@
         .hero-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
 
         .stat-card {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 20px;
-            padding: 2rem;
+            border-radius: 15px;
+            padding: 1.2rem;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            animation: animateBorder 2s linear infinite;
+        }
+
+        @keyframes animateBorder {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         .stat-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255,255,255,0.1);
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #fff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
         .stat-label {
             color: rgba(255,255,255,0.8);
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         /* Results Section */
@@ -366,9 +406,6 @@
         .screen-content {
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -376,17 +413,24 @@
             font-size: 1.2rem;
             font-weight: 600;
             text-align: center;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background-color: #000;
+            overflow: hidden;
+        }
+        
+        .screen-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         /* Placeholder styling - Replace these with your actual images */
         .phone-1 .screen-content {
-            background-image: url('img/screenshot_interactions.png');
-            /* Remove the background gradient above when you add your image */
+            background-color: #000;
         }
 
-        .phone-2 .screen-content             background-image: url(\'img/screenshot_views.png\');
-            /* Remove the background gradient above when you add your image */
+        .phone-2 .screen-content {
+            background-color: #000;
         }
 
         .mobile-portfolio .section-title {
@@ -508,14 +552,21 @@
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 2rem;
+                padding-top: 4rem;
             }
 
             .hero-text h1 {
                 font-size: 2.5rem;
+                margin-top: 2rem;
+            }
+            
+            .hero-text .subtitle {
+                margin-top: 0.5rem;
             }
 
             .hero-stats {
                 grid-template-columns: 1fr;
+                margin-top: 2rem;
             }
 
             .section-title {
@@ -736,7 +787,7 @@
                     <div class="phone-frame">
                         <div class="phone-screen">
                             <div class="screen-content">
-
+                                <img src="Design sem nome (35).png" alt="Estatísticas de visualizações">
                             </div>
                         </div>
                     </div>
@@ -746,14 +797,12 @@
                     <div class="phone-frame">
                         <div class="phone-screen">
                             <div class="screen-content">
-
+                                <img src="image.png" alt="Estatísticas de interações">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-
         </div>
     </section>
 
@@ -850,7 +899,7 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Ready to Skyrocket Your Results?</h2>
+            <h2 class="section-title" style="color: white; -webkit-text-fill-color: white !important;">Ready to Skyrocket Your Results?</h2>
             <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">
                 I'm ready to take your company to new heights. Let's create a success story together.
             </p>
@@ -890,7 +939,7 @@
             </div>
             
             <div style="margin-top: 3rem;">
-                <a href="mailto:multitask_@outlook.com" class="cta-button">
+                <a href="https://wa.me/5514996621675?text=I'd%20like%20to%20know%20more%20about%20your%20work" class="cta-button" style="background: linear-gradient(45deg, #ffffff, #e6e6e6); color: #333;">
                     <i class="fas fa-paper-plane"></i> Start Our Conversation
                 </a>
             </div>
