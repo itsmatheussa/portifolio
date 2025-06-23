@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matheus Sá - Digital Marketing Specialist</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Matheus Sá - Premium Digital Marketing Specialist</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,320 +15,105 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Esquema de cores alternadas */
-        .hero {
-            background: #1a1a1a; /* Cinza muito escuro quase preto */
-            color: white;
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
         }
 
-        .results {
-            background: white;
-            color: #333;
+        /* Gradient Backgrounds */
+        .gradient-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
-        .services {
-            background: #f0f0f0; /* Cinza claro */
-            color: #333;
+        .gradient-dark {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
         }
 
-        .mobile-portfolio {
-            background: #1a1a1a; /* Cinza muito escuro quase preto */
-            color: white;
-        }
-
-        .skills {
-            background: white;
-            color: #333;
-        }
-
-        .contact {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-        }
-
-        /* Ajustes de texto para seções escuras */
-        .dark-section {
-            color: white;
-        }
-        
-        .dark-section .section-title,
-        .dark-section .section-subtitle,
-        .dark-section .stat-label,
-        .dark-section .result-description,
-        .dark-section .service-description,
-        .dark-section .skill-list,
-        .dark-section .contact-value {
-            color: rgba(255,255,255,0.9);
-        }
-
-        .dark-section .section-title {
-            background: linear-gradient(135deg, #ffffff, #cccccc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Common Styles */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
+        .gradient-text {
             background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 4rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #666;
+        /* Glass Morphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 8rem 0;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .hero-text .description {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 15px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .stat-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
+        .glass-light {
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        .stat-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.15);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-        }
-
-        /* Results Section */
-        .results {
-            padding: 8rem 0;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-        }
-
-        .result-card {
-            background: #f8f9fa;
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            transition: all 0.3s ease;
+        /* Realistic Phone Mockup */
+        .phone-container {
+            perspective: 1000px;
+            transform-style: preserve-3d;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        .result-card::before {
+        /* Blue Light Glow Behind Phones */
+        .phone-container::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.3), transparent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            animation: pulse-glow 3s ease-in-out infinite;
         }
 
-        .result-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .result-timeframe {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        .result-metric {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-
-        .result-description {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 8rem 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .service-description {
-            line-height: 1.6;
-            color: #666;
-        }
-
-        /* Mobile Portfolio Section */
-        .mobile-portfolio {
-            padding: 8rem 0;
-        }
-
-        .mobile-showcase {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 4rem;
-            margin-top: 4rem;
-        }
-
-        .mobile-device {
-            position: relative;
-            animation: floatPhone 6s ease-in-out infinite;
-        }
-
-        .mobile-device:nth-child(2) {
-            animation-delay: -3s;
-        }
-
-        @keyframes floatPhone {
+        @keyframes pulse-glow {
             0%, 100% {
-                transform: translateY(0px);
+                opacity: 0.5;
+                transform: translate(-50%, -50%) scale(1);
             }
             50% {
-                transform: translateY(-20px);
+                opacity: 0.8;
+                transform: translate(-50%, -50%) scale(1.2);
             }
         }
 
-        .phone-frame {
-            width: 280px;
-            height: 560px;
-            background: #2c2c54;
-            border-radius: 40px;
-            padding: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
             position: relative;
-            border: 8px solid #333;
+            transform-style: preserve-3d;
+            transform: rotateY(-5deg) rotateX(5deg);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .phone-frame::before {
+        .phone-mockup:hover {
+            transform: rotateY(10deg) rotateX(10deg) translateY(-10px);
+        }
+
+        .phone-body {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #1a202c, #2d3748);
+            border-radius: 40px;
+            padding: 20px;
+            position: relative;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+            border: 2px solid #4a5568;
+        }
+
+        .phone-body::before {
             content: '';
             position: absolute;
             top: 15px;
@@ -334,11 +121,12 @@
             transform: translateX(-50%);
             width: 60px;
             height: 6px;
-            background: #666;
+            background: #718096;
             border-radius: 3px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
-        .phone-frame::after {
+        .phone-body::after {
             content: '';
             position: absolute;
             bottom: 15px;
@@ -346,172 +134,264 @@
             transform: translateX(-50%);
             width: 50px;
             height: 50px;
-            border: 3px solid #666;
+            border: 3px solid #4a5568;
             border-radius: 50%;
+            background: radial-gradient(circle, #2d3748, #4a5568);
         }
 
         .phone-screen {
             width: 100%;
             height: 100%;
             background: #000;
-            border-radius: 25px;
+            border-radius: 30px;
             overflow: hidden;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 
+                inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+                0 0 20px rgba(0, 0, 0, 0.4);
         }
 
         .screen-content {
             width: 100%;
             height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-align: center;
-            background-color: #000;
+            position: relative;
             overflow: hidden;
+            border-radius: 30px;
         }
-        
-        .screen-content img {
+
+        /* Enhanced Reels Animation */
+        .reels-container {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            object-position: center;
+            position: relative;
+            overflow: hidden;
+            background: #1a1a1a;
         }
 
-        /* Skills Section */
-        .skills {
-            padding: 8rem 0;
+        .reel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            animation: scroll-reels 30s ease-in-out infinite;
+            background: #1a1a1a;
+            opacity: 0;
+            transform: translateY(100%) scale(0.95);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+        .reel:nth-child(2) {
+            animation-delay: 10s;
         }
 
-        .skill-category {
-            background: #f8f9fa;
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        .reel:nth-child(3) {
+            animation-delay: 20s;
         }
 
-        .skill-category:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        @keyframes scroll-reels {
+            0% {
+                transform: translateY(100%) scale(0.95);
+                opacity: 0;
+            }
+            3.33%, 30% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            33.33% {
+                transform: translateY(-100%) scale(0.95);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(-100%) scale(0.95);
+                opacity: 0;
+            }
         }
 
-        /* ATUALIZAÇÃO: Emojis roxos com efeito duotone */
-        .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-
-        .skill-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .skill-list {
-            list-style: none;
-            color: #666;
-            line-height: 1.8;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 8rem 0;
-            text-align: center;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-item {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+        .graph-container {
+            width: 90%;
+            height: 80%;
+            position: relative;
+            background: #2d3748;
             border-radius: 15px;
-            padding: 2rem;
+            padding: 20px;
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(102, 126, 234, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .graph-bar {
+            width: 50px;
+            height: 0;
+            background: #764ba2; /* Purple color matching gradient-text */
+            border-radius: 8px;
+            margin: 0 10px;
+            position: relative;
+            animation: grow-bar 4s cubic-bezier(0.4, 0, 0.2, 1) 1s forwards;
+            box-shadow: 0 0 10px rgba(118, 75, 162, 0.5);
+        }
+
+        .graph-bar.views {
+            animation-delay: 1s;
+        }
+
+        .graph-bar.interactions {
+            animation-delay: 1s;
+        }
+
+        .graph-bar.leads {
+            animation-delay: 1s;
+        }
+
+        @keyframes grow-bar {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 80%;
+            }
+        }
+
+        .graph-text {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            opacity: 0;
+            animation: show-text 4s ease forwards;
+        }
+
+        .graph-text.views {
+            animation-delay: 1s;
+        }
+
+        .graph-text.interactions {
+            animation-delay: 1s;
+        }
+
+        .graph-text.leads {
+            animation-delay: 1s;
+        }
+
+        @keyframes show-text {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        .graph-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: #a0aec0;
+        }
+
+        /* Video Player UI Overlay */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent 10%, transparent 90%, rgba(0, 0, 0, 0.3));
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: rgba(255, 255, 255, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .reels-container:hover .play-icon {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .progress-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding-bottom: 20px;
+        }
+
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
             transition: all 0.3s ease;
+            transform: scale(0.8);
         }
 
-        .contact-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
+        .progress-dot.active {
+            background: #667eea;
+            transform: scale(1.2);
         }
 
-        /* ATUALIZAÇÃO: Ícones cinza escuro */
-        .contact-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #1a1a1a; /* Cinza escuro quase preto */
-            filter: brightness(0.8);
-        }
-
-        .contact-label {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-value {
-            color: rgba(255,255,255,0.9);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 3rem;
+        /* Phone Animation */
+        @keyframes phone-float {
+            0%, 100% { 
+                transform: rotateY(-5deg) rotateX(5deg) translateY(0px); 
             }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mobile-showcase {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .phone-frame {
-                width: 240px;
-                height: 480px;
+            50% { 
+                transform: rotateY(-5deg) rotateX(5deg) translateY(-15px); 
             }
         }
 
-        /* Animations */
+        .phone-float {
+            animation: phone-float 5s ease-in-out infinite;
+        }
+
+        /* Screen Glow Effect */
+        @keyframes screen-pulse {
+            0%, 100% { 
+                box-shadow: 
+                    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+                    0 0 20px rgba(0, 0, 0, 0.4),
+                    0 0 30px rgba(102, 126, 234, 0.2);
+            }
+            50% { 
+                box-shadow: 
+                    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+                    0 0 20px rgba(0, 0, 0, 0.4),
+                    0 0 40px rgba(102, 126, 234, 0.3);
+            }
+        }
+
+        .screen-glow {
+            animation: screen-pulse 4s ease-in-out infinite;
+        }
+
+        /* Smooth Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -523,314 +403,886 @@
             }
         }
 
-        .fade-in-up {
+        .animate-fadeInUp {
             animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Hover Effects */
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button Glow Animation */
+        .button-glow {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button-glow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateY(-50%) skewX(-25deg);
+            animation: button-shine 3s ease-in-out infinite;
+        }
+
+        @keyframes button-shine {
+            0% {
+                left: -100%;
+            }
+            50% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        .button-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 4px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .phone-mockup {
+                width: 240px;
+                height: 480px;
+            }
+            
+            .phone-body {
+                padding: 15px;
+                border-radius: 30px;
+            }
+            
+            .phone-screen {
+                border-radius: 20px;
+            }
+            
+            .screen-content {
+                border-radius: 20px;
+            }
+
+            .graph-container {
+                width: 95%;
+                height: 70%;
+            }
+
+            .graph-bar {
+                width: 40px;
+                margin: 0 8px;
+            }
+
+            .graph-text {
+                font-size: 16px;
+                top: -25px;
+            }
+
+            .graph-label {
+                font-size: 12px;
+                bottom: -25px;
+            }
+
+            .play-icon {
+                font-size: 32px;
+            }
+
+            .progress-dot {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .phone-mockup {
+                width: 200px;
+                height: 400px;
+            }
+
+            .graph-container {
+                width: 98%;
+                height: 65%;
+            }
+
+            .graph-bar {
+                width: 30px;
+                margin: 0 6px;
+            }
+
+            .graph-text {
+                font-size: 14px;
+                top: -20px;
+            }
+
+            .graph-label {
+                font-size: 10px;
+                bottom: -20px;
+            }
+
+            .play-icon {
+                font-size: 28px;
+            }
+
+            .progress-dot {
+                width: 5px;
+                height: 5px;
+            }
+        }
+
+        /* Responsive Stats Text */
+        .stat-text {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Enhanced Card Styles */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Pulse Animation for Status */
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .pulse-dot {
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        /* Chart Animation for Exceptional Results and Accelerated Organic Growth */
+        .chart-container {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .chart-bar {
+            position: absolute;
+            bottom: 0;
+            width: 8px;
+            background: linear-gradient(135deg, #ffffff, #e5e7eb);
+            border-radius: 2px;
+            animation: chart-grow 3s ease-in-out infinite;
+            transform-origin: bottom;
+        }
+
+        .chart-bar:nth-child(1) {
+            left: 4px;
+            height: 16px;
+            animation-delay: 0s;
+        }
+
+        .chart-bar:nth-child(2) {
+            left: 14px;
+            height: 24px;
+            animation-delay: 0.3s;
+        }
+
+        .chart-bar:nth-child(3) {
+            left: 24px;
+            height: 32px;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes chart-grow {
+            0%, 100% {
+                transform: scaleY(0.8);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scaleY(1.2);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .chart-container {
+                width: 32px;
+                height: 32px;
+            }
+            .chart-bar {
+                width: 6px;
+            }
+            .chart-bar:nth-child(1) {
+                left: 3px;
+                height: 12px;
+            }
+            .chart-bar:nth-child(2) {
+                left: 12px;
+                height: 18px;
+            }
+            .chart-bar:nth-child(3) {
+                left: 21px;
+                height: 24px;
+            }
+        }
+
+        /* Icon Animation for Other Icons */
+        .icon-container {
+            width: 48px;
+            height: 48px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-rotate {
+            font-size: 24px;
+            color: #fff;
+            position: relative;
+            animation: icon-rotate 4s ease-in-out infinite;
+        }
+
+        @keyframes icon-rotate {
+            0%, 100% {
+                transform: rotate(0deg) scale(1);
+                opacity: 0.9;
+            }
+            50% {
+                transform: rotate(10deg) scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .icon-container {
+                width: 32px;
+                height: 32px;
+            }
+            .icon-rotate {
+                font-size: 16px;
+            }
+        }
+
+        /* Portfolio Layout Adjustments */
+        .portfolio-phones {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .portfolio-phones {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Count-up Animation */
+        .count-up {
+            display: inline-block;
+            font-weight: bold;
         }
     </style>
 </head>
-<body>
-    <!-- Hero Section (Cinza escuro) -->
-    <section class="hero dark-section">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text fade-in-up">
-                    <h1>MATHEUS SÁ</h1>
-                    <p class="subtitle">Digital Marketing Specialist</p>
-                    <p class="description">
-                        Accelerating brand growth through data-driven strategies, viral content creation, 
-                        and cutting-edge social media management.
-                    </p>
-                    <a href="#contact" class="cta-button">
-                        <i class="fas fa-rocket"></i> Let's Skyrocket Your Results
-                    </a>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-light">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold gradient-text">Matheus Sá</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition-colors">Portfolio</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
                 </div>
-                <div class="hero-stats fade-in-up">
-                    <div class="stat-card">
-                        <div class="stat-number">200%</div>
-                        <div class="stat-label">Increase in Brand Interaction</div>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen gradient-dark relative overflow-hidden pt-20">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-64 h-64 gradient-primary rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-80 h-80 gradient-primary rounded-full blur-3xl animate-pulse" style="animation-delay: 3s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 py-12 sm:py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen">
+                <!-- Left Content -->
+                <div class="text-left space-y-6 sm:space-y-8 animate-fadeInUp order-2 lg:order-1">
+                    <div class="space-y-4">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-poppins text-white leading-tight">
+                            MATHEUS SÁ
+                        </h1>
+                        <p class="text-xl sm:text-2xl lg:text-3xl font-light text-gray-300">
+                            Premium Digital Marketing <span class="gradient-text font-semibold">Specialist</span>
+                        </p>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">20X</div>
-                        <div class="stat-label">Increase in Video Views</div>
+                    
+                    <p class="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-2xl">
+                        I transform brands into <span class="text-purple-400 font-semibold">digital phenomena</span> through 
+                        data-driven strategies, viral content creation, and high-impact social media management.
+                    </p>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 py-6 sm:py-8">
+                        <div class="glass rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center hover-lift">
+                            <div class="text-2xl sm:text-3xl font-bold gradient-text stat-text count-up" data-target="200">0%</div>
+                            <div class="text-xs sm:text-sm text-gray-400">Engagement Boost</div>
+                        </div>
+                        <div class="glass rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center hover-lift">
+                            <div class="text-2xl sm:text-3xl font-bold gradient-text stat-text count-up" data-target="20">0X</div>
+                            <div class="text-xs sm:text-sm text-gray-400">More Views</div>
+                        </div>
+                        <div class="glass rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center hover-lift">
+                            <div class="text-2xl sm:text-3xl font-bold gradient-text stat-text count-up" data-target="5">0+</div>
+                            <div class="text-xs sm:text-sm text-gray-400">Years Experience</div>
+                        </div>
+                        <div class="glass rounded-xl sm:rounded-2xl p-3 sm:p-4 text-center hover-lift">
+                            <div class="text-2xl sm:text-3xl font-bold gradient-text stat-text count-up" data-target="100">0%</div>
+                            <div class="text-xs sm:text-sm text-gray-400">Client Satisfaction</div>
+                        </div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Years of Experience</div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="gradient-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover-lift transition-all duration-300 text-center button-glow">
+                            <i class="fas fa-rocket mr-2"></i>
+                            Boost My Results
+                        </a>
+                        <a href="#portfolio" class="glass text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover-lift transition-all duration-300 text-center button-glow">
+                            <i class="fas fa-play mr-2"></i>
+                            View Portfolio
+                        </a>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Client Satisfaction</div>
+                </div>
+                
+                <!-- Right Content - Phone Mockup with Reels -->
+                <div class="relative animate-slideInRight order-1 lg:order-2 flex justify-center hero-right">
+                    <div class="phone-container">
+                        <div class="phone-mockup phone-float">
+                            <div class="phone-body">
+                                <div class="phone-screen screen-glow">
+                                    <div class="screen-content">
+                                        <div class="reels-container">
+                                            <!-- Reel 1: Views -->
+                                            <div class="reel">
+                                                <div class="graph-container">
+                                                    <div class="graph-bar views">
+                                                        <span class="graph-text views count-up" data-target="12000000">0</span>
+                                                        <span class="graph-label">Views</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Reel 2: Interactions -->
+                                            <div class="reel">
+                                                <div class="graph-container">
+                                                    <div class="graph-bar interactions">
+                                                        <span class="graph-text interactions count-up" data-target="50000">0</span>
+                                                        <span class="graph-label">Interactions</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Reel 3: Leads -->
+                                            <div class="reel">
+                                                <div class="graph-container">
+                                                    <div class="graph-bar leads">
+                                                        <span class="graph-text leads count-up" data-target="50000">0</span>
+                                                        <span class="graph-label">Leads</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Video Overlay -->
+                                            <div class="video-overlay">
+                                                <i class="fas fa-play play-icon"></i>
+                                                <div class="progress-dots">
+                                                    <div class="progress-dot" data-reel="1"></div>
+                                                    <div class="progress-dot" data-reel="2"></div>
+                                                    <div class="progress-dot" data-reel="3"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Results Section (Branco) -->
-    <section class="results">
-        <div class="container">
-            <h2 class="section-title">Proven Results</h2>
-            <p class="section-subtitle">
-                Don't take my word for it - check out the real results from pages I've built from scratch
-            </p>
+    <!-- About Section -->
+    <section id="about" class="py-12 sm:py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16 animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-poppins gradient-text mb-4 sm:mb-6">Elite Personal Brand</h2>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    My personal brand was built through consistent results, constant innovation, 
+                    and an unwavering commitment to excellence in every project.
+                </p>
+            </div>
             
-            <div class="results-grid">
-                <div class="result-card fade-in-up">
-                    <div class="result-timeframe">In Less Than 4 Months</div>
-                    <div class="result-metric">Explosive Growth</div>
-                    <p class="result-description">
+            <div class="grid lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
+                <!-- Brand Pillar 1: Market Authority -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 gradient-primary rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                        <div class="icon-container">
+                            <i class="fas fa-crown icon-rotate"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">Market Authority</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Recognized as one of Brazil's leading digital marketing specialists, 
+                        with success cases that became market references.
+                    </p>
+                </div>
+                
+                <!-- Brand Pillar 2: Constant Innovation -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 bg-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                        <div class="icon-container">
+                            <i class="fas fa-laptop icon-rotate"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">Constant Innovation</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Always one step ahead of trends, implementing innovative strategies 
+                        that put my clients at the forefront of digital marketing.
+                    </p>
+                </div>
+                
+                <!-- Brand Pillar 3: Exceptional Results -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 bg-red-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+                        <div class="chart-container">
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">Exceptional Results</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Every project is an opportunity to exceed expectations and deliver results 
+                        that transform businesses and accelerate brand growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-12 sm:py-20 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16 animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-poppins gradient-text mb-4 sm:mb-6">Proven Results</h2>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Don't just take my word for it - check out the real results from pages I built from scratch
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Result Card 1 -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift">
+                    <div class="gradient-primary text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm font-semibold inline-block mb-4 sm:mb-6">
+                        In Less Than 4 Months
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-900">Explosive Growth</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 sm:mb-6">
                         Built a brand from zero to thousands of engaged followers using 
                         algorithm-based tactics and viral content strategies.
                     </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 gradient-primary rounded-full flex items-center justify-center">
+                            <i class="fas fa-rocket text-white"></i>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-bold gradient-text">+500%</div>
+                            <div class="text-sm text-gray-500">Organic Growth</div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="result-card fade-in-up">
-                    <div class="result-timeframe">In Less Than 30 Days</div>
-                    <div class="result-metric">Rapid Expansion</div>
-                    <p class="result-description">
-                        Achieved remarkable organic reach through tailored content that 
-                        resonates deeply with target audiences.
+                <!-- Result Card 2 -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift">
+                    <div class="bg-blue-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm font-semibold inline-block mb-4 sm:mb-6">
+                        In Less Than 30 Days
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-900">Rapid Expansion</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 sm:mb-6">
+                        Achieved remarkable organic reach through personalized content that 
+                        resonates deeply with the target audience.
                     </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-chart-line text-white"></i>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-bold gradient-text">6M+</div>
+                            <div class="text-sm text-gray-500">Monthly Impressions</div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="result-card fade-in-up">
-                    <div class="result-timeframe">Ongoing Success</div>
-                    <div class="result-metric">Sustainable Growth</div>
-                    <p class="result-description">
-                        Consistent performance tracking and quick adjustments ensure 
+                <!-- Result Card 3 -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift">
+                    <div class="bg-red-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm font-semibold inline-block mb-4 sm:mb-6">
+                        Ongoing Success
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-900">Sustainable Growth</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 sm:mb-6">
+                        Consistent performance monitoring and quick adjustments ensure that 
                         strategies are always optimized for maximum results.
                     </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 sm:w-12 h-10 sm:h-12 bg-red-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-trophy text-white"></i>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-bold gradient-text">98%</div>
+                            <div class="text-sm text-gray-500">Retention Rate</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section (Cinza claro) -->
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">What I Do For Your Business</h2>
-            <p class="section-subtitle">
-                Custom-tailored strategies designed specifically for your brand's unique needs and goals
-            </p>
+    <!-- Services Section -->
+    <section id="services" class="py-12 sm:py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16 animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-poppins gradient-text mb-4 sm:mb-6">What I Do For Your Business</h2>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Personalized strategies designed specifically for your brand's unique needs and objectives
+                </p>
+            </div>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📈</div>
-                    <h3 class="service-title">Accelerated Organic Growth</h3>
-                    <p class="service-description">
-                        Leveraging algorithm-based tactics to maximize reach without relying heavily on paid ads. 
-                        Focus on sustainable, long-term growth strategies.
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Service 1: Accelerated Organic Growth -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift group">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 gradient-primary rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <div class="chart-container">
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">Accelerated Organic Growth</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 sm:mb-6">
+                        Leveraging algorithm-based tactics to maximize reach without heavy reliance on paid ads. 
+                        Focus on sustainable growth that builds lasting brand value.
                     </p>
+                    <div class="flex items-center text-purple-600 font-semibold">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3 class="service-title">Tailored Content Strategy</h3>
-                    <p class="service-description">
-                        Creating content that deeply resonates with target audiences using impactful copy, 
-                        viral imagery, and emotional triggers.
+                <!-- Service 2: Personalized Content Strategy -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift group">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 bg-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <div class="icon-container">
+                            <i class="fas fa-play icon-rotate"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">Personalized Content Strategy</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 sm:mb-6">
+                        Creating content that speaks directly to your audience's desires and needs, 
+                        generating real engagement and building loyal communities.
                     </p>
+                    <div class="flex items-center text-blue-600 font-semibold">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3 class="service-title">Performance Tracking</h3>
-                    <p class="service-description">
-                        Constant monitoring of KPIs with quick adjustments to ensure strategies 
+                <!-- Service 3: Video Content Creation -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift group">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 bg-red-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <div class="icon-container">
+                            <i class="fas fa-video icon-rotate"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">Video Content Creation</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 sm:mb-6">
+                        Professional video production that captures attention and converts viewers into customers. 
+                        From concept to final edit, every detail is crafted for maximum impact.
+                    </p>
+                    <div class="flex items-center text-red-600 font-semibold">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </div>
+                </div>
+                
+                <!-- Service 4: Performance Monitoring -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift group">
+                    <div class="w-10 sm:w-16 h-12 sm:h-16 bg-green-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <div class="icon-container">
+                            <i class="fas fa-mobile-alt icon-rotate"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">Performance Monitoring</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 sm:mb-6">
+                        Constant KPI monitoring with quick adjustments to ensure strategies 
                         are always optimized for the best results.
                     </p>
+                    <div class="flex items-center text-green-600 font-semibold">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">🎬</div>
-                    <h3 class="service-title">Video Content Creation</h3>
-                    <p class="service-description">
-                        Professional video editing and content creation that leaves competition behind, 
-                        resulting in massive increases in engagement and views.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">👥</div>
-                    <h3 class="service-title">Social Media Management</h3>
-                    <p class="service-description">
+                <!-- Service 5: Social Media Management -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift group">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 bg-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <div class="icon-container">
+                            <i class="fab fa-instagram icon-rotate"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">Social Media Management</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 sm:mb-6">
                         Managing multiple social media accounts with unique approaches, 
-                        keeping your brand consistently visible and irresistible.
+                        keeping content consistently visible and irresistible.
                     </p>
+                    <div class="flex items-center text-indigo-600 font-semibold">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">💰</div>
-                    <h3 class="service-title">Sales Funnel Optimization</h3>
-                    <p class="service-description">
+                <!-- Service 6: Sales Funnel Optimization -->
+                <div class="feature-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover-lift group">
+                    <div class="w-12 sm:w-16 h-12 sm:h-16 bg-yellow-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <div class="icon-container">
+                            <i class="fas fa-funnel-dollar icon-rotate"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">Sales Funnel Optimization</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 sm:mb-6">
                         Creating and optimizing sales funnels that convert visitors into loyal customers, 
                         maximizing your return on investment.
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mobile Portfolio Section (Cinza escuro) -->
-    <section class="mobile-portfolio dark-section">
-        <div class="container">
-            <h2 class="section-title">Portfolio Results</h2>
-            <p class="section-subtitle">
-                Real screenshots from successful campaigns I've managed
-            </p>
-            
-            <div class="mobile-showcase">
-                <div class="mobile-device phone-1">
-                    <div class="phone-frame">
-                        <div class="phone-screen">
-                            <div class="screen-content">
-                                <img src="Design sem nome (35).png" alt="Estatísticas de visualizações">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mobile-device phone-2">
-                    <div class="phone-frame">
-                        <div class="phone-screen">
-                            <div class="screen-content">
-                                <img src="image of the results" alt="Estatísticas de interações">
-                            </div>
-                        </div>
+                    <div class="flex items-center text-yellow-600 font-semibold">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section (Branco) -->
-    <section class="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Expertise</h2>
-            <p class="section-subtitle">
-                A comprehensive skill set covering all aspects of digital marketing and content creation
-            </p>
+    <!-- Mobile Portfolio Section -->
+    <section id="portfolio" class="py-12 sm:p-20 gradient-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-64 h-64 gradient-primary rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-80 h-80 gradient-primary rounded-full blur-3xl animate-pulse" style="animation-delay: 3s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:p-6 relative z-10">
+            <div class="text-center mb-12 sm:mb-16 animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-poppins gradient-text mb-4 sm:mb-6">Portfolio Results</h2>
+                <p class="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                    Real screenshots from successful campaigns I've managed - concrete proof of my strategies' power
+                </p>
+            </div>
             
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-icon">🎬</div>
-                    <h3 class="skill-title">Video Editing</h3>
-                    <ul class="skill-list">
-                        <li>Adobe Premiere Pro</li>
-                        <li>Final Cut Pro</li>
-                        <li>CapCut</li>
-                        <li>Sony Vegas</li>
-                    </ul>
+            <div class="portfolio-phones">
+                <!-- Phone 1 -->
+                <div class="phone-container animate-slideInLeft">
+                    <div class="phone-mockup phone-float">
+                        <div class="phone-body">
+                            <div class="phone-screen screen-glow">
+                                <div class="screen-content">
+                                    <img src="Design sem nome (35).png" alt="View statistics showing explosive growth" class="w-full h-full object-cover"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 sm:mt-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Explosive Growth</h3>
+                        <p class="text-sm sm:text-base text-gray-400">Views that generated millions of impressions</p>
+                    </div>
                 </div>
                 
-                <div class="skill-category">
-                    <div class="skill-icon">📱</div>
-                    <h3 class="skill-title">Social Media</h3>
-                    <ul class="skill-list">
-                        <li>Facebook Marketing</li>
-                        <li>Instagram Growth</li>
-                        <li>Twitter Management</li>
-                        <li>Platform Optimization</li>
-                    </ul>
+                <!-- Phone 2 -->
+                <div class="phone-container animate-slideInRight">
+                    <div class="phone-mockup phone-float">
+                        <div class="phone-body">
+                            <div class="phone-screen screen-glow">
+                                <div class="screen-content">
+                                    <img src="image of the results" alt="Interaction statistics showing premium engagement" class="w-full h-full object-cover"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 sm:mt-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Premium Engagement</h3>
+                        <p class="text-sm sm:text-base text-gray-400">Interactions that converted into real sales</p>
+                    </div>
                 </div>
-                
-                <div class="skill-category">
-                    <div class="skill-icon">📢</div>
-                    <h3 class="skill-title">Paid Advertising</h3>
-                    <ul class="skill-list">
-                        <li>Google Ads</li>
-                        <li>Facebook Ads</li>
-                        <li>Campaign Optimization</li>
-                        <li>ROI Maximization</li>
-                    </ul>
+            </div>
+            
+            <!-- Portfolio Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16">
+                <div class="glass rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover-lift">
+                    <div class="text-3xl sm:text-4xl font-black gradient-text mb-2">2.5M+</div>
+                    <div class="text-sm sm:text-base text-gray-400">Views Generated</div>
                 </div>
-                
-                <div class="skill-category">
-                    <div class="skill-icon">📊</div>
-                    <h3 class="skill-title">Analytics</h3>
-                    <ul class="skill-list">
-                        <li>Google Analytics</li>
-                        <li>Social Media Insights</li>
-                        <li>Performance Tracking</li>
-                        <li>Data-Driven Decisions</li>
-                    </ul>
+                <div class="glass rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover-lift">
+                    <div class="text-3xl sm:text-4xl font-black gradient-text mb-2">150K+</div>
+                    <div class="text-sm sm:text-base text-gray-400">New Followers</div>
                 </div>
-                
-                <div class="skill-category">
-                    <div class="skill-icon">🌐</div>
-                    <h3 class="skill-title">Web Development</h3>
-                    <ul class="skill-list">
-                        <li>WordPress</li>
-                        <li>E-commerce Development</li>
-                        <li>SEO Optimization</li>
-                        <li>Responsive Design</li>
-                    </ul>
+                <div class="glass rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover-lift">
+                    <div class="text-3xl sm:text-4xl font-black gradient-text mb-2">85%</div>
+                    <div class="text-sm sm:text-base text-gray-400">Engagement Rate</div>
                 </div>
-                
-                <div class="skill-category">
-                    <div class="skill-icon">🎨</div>
-                    <h3 class="skill-title">Creative Design</h3>
-                    <ul class="skill-list">
-                        <li>Graphic Design</li>
-                        <li>Brand Identity</li>
-                        <li>Visual Content</li>
-                        <li>UI/UX Principles</li>
-                    </ul>
+                <div class="glass rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover-lift">
+                    <div class="text-3xl sm:text-4xl font-black gradient-text mb-2">300%</div>
+                    <div class="text-sm sm:text-base text-gray-400">Average ROI</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title" style="color: white; -webkit-text-fill-color: white !important;">Ready to Skyrocket Your Results?</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">
-                I'm ready to take your company to new heights. Let's create a success story together.
-            </p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        📞
-                    </div>
-                    <div class="contact-label">Phone</div>
-                    <div class="contact-value">+55 (14) 99662-1675</div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        📧
-                    </div>
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value">multitask_@outlook.com</div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        📍
-                    </div>
-                    <div class="contact-label">Location</div>
-                    <div class="contact-value">Brasil, SP</div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        🌍
-                    </div>
-                    <div class="contact-label">Languages</div>
-                    <div class="contact-value">Portuguese, English, Spanish</div>
-                </div>
+    <section id="contact" class="py-12 sm:p-20 gradient-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-10 w-64 h-64 gradient-primary rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-80 h-80 gradient-primary rounded-full blur-3xl animate-pulse" style="animation-delay: 3s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:p-6 relative z-10">
+            <div class="text-center mb-12 sm:mb-16 animate-fadeInUp">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-poppins text-white mb-4 sm:mb-6">Ready To Accelerate Your Results?</h2>
+                <p class="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                    I'm ready to take your company to new heights. Let's create a success story together.
+                </p>
             </div>
             
-            <div style="margin-top: 3rem;">
-                <a href="https://wa.me/5514996621675?text=I'd%20like%20to%20know%20more%20about%20your%20work" class="cta-button" style="background: linear-gradient(45deg, #ffffff, #e6e6e6); color: #333;">
-                    <i class="fas fa-paper-plane"></i> Start Our Conversation
-                </a>
+            <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <!-- Contact Info -->
+                <div class="space-y-6 sm:space-y-8">
+                    <div class="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8">
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Contact Information</h3>
+                        <div class="space-y-4 sm:space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 sm:w-12 h-10 sm:h-12 gradient-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-gray-400 text-sm">Phone</div>
+                                    <div class="text-white font-semibold">+55 (14) 99662-1675</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 sm:w-12 h-10 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-gray-400 text-sm">Email</div>
+                                    <div class="text-white font-semibold">multitask_@outlook.com</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 sm:w-12 h-10 sm:h-12 bg-red-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-gray-400 text-sm">Location</div>
+                                    <div class="text-white font-semibold">Brazil, SP</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 sm:w-12 h-10 sm:h-12 bg-green-600 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-globe text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="text-gray-400 text-sm">Languages</div>
+                                    <div class="text-white font-semibold">Portuguese, English, Spanish</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Section -->
+                <div class="text-center">
+                    <div class="glass rounded-2xl sm:rounded-3xl p-8 sm:p-12">
+                        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Transform Your Business Today</h3>
+                        <p class="text-gray-400 mb-6 sm:mb-8 leading-relaxed">
+                            Don't waste more time with strategies that don't work. 
+                            Invest in proven results and watch your brand take off.
+                        </p>
+                        
+                        <div class="space-y-4 sm:space-y-6">
+                            <a href="https://wa.me/5514996621675?text=I%20want%20to%20know%20about%20your%20work" 
+                               class="w-full gradient-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover-lift transition-all duration-300 inline-block button-glow">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                Start Our Conversation
+                            </a>
+                            
+                            <div class="text-center">
+                                <div class="text-sm text-gray-500 mb-2">Response within 2 hours</div>
+                                <div class="flex justify-center items-center space-x-2">
+                                    <div class="w-3 h-3 bg-green-500 rounded-full pulse-dot"></div>
+                                    <span class="text-green-400 text-sm font-semibold">Online now</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-gray-400">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <p>© 2024 Matheus Sá. All rights reserved. Premium Digital Marketing Specialist.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -848,22 +1300,193 @@
 
         // Intersection Observer for animations
         const observerOptions = {
-            threshold: 0.1
+            threshold: 0.1,
+            rootMargin: '0px 0px -20px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                    observer.unobserve(entry.target);
+                    entry.target.classList.add('animate-fadeInUp');
+                    // Trigger count-up animation for stats and reel graphs
+                    if (entry.target.querySelectorAll('.count-up').length > 0) {
+                        startCountUp();
+                    }
+                    // Trigger progress dots animation
+                    if (entry.target.querySelector('.reels-container')) {
+                        startProgressDots();
+                    }
                 }
             });
         }, observerOptions);
 
-        // Observe all elements with the 'fade-in' class
-        document.querySelectorAll('.fade-in-up').forEach(element => {
-            observer.observe(element);
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
         });
+
+        // Count-up Animation
+        function startCountUp() {
+            const counters = document.querySelectorAll('.count-up');
+            counters.forEach(counter => {
+                if (!counter.classList.contains('counted')) {
+                    counter.classList.add('counted');
+                    const target = parseFloat(counter.getAttribute('data-target'));
+                    let suffix = '';
+                    let isReelNumber = !counter.closest('.stat-text');
+                    if (counter.closest('.stat-text')) {
+                        suffix = counter.textContent.replace(/[0-9.]/g, '');
+                    } else {
+                        // Format numbers for reel graphs
+                        if (target >= 1000000) {
+                            suffix = 'M';
+                        } else if (target >= 1000) {
+                            suffix = 'K';
+                        }
+                    }
+                    let count = 0;
+                    const duration = counter.closest('.stat-text') ? 2000 : 3500; // 2s for stats, 3.5s for reel numbers
+                    const increment = target / (duration / 16);
+
+                    const timer = setInterval(() => {
+                        count += increment;
+                        if (count >= target) {
+                            if (suffix === 'M') {
+                                counter.textContent = (target / 1000000) + suffix;
+                            } else if (suffix === 'K') {
+                                counter.textContent = (target / 1000) + suffix;
+                            } else {
+                                counter.textContent = Math.floor(target) + suffix;
+                            }
+                            clearInterval(timer);
+                        } else {
+                            if (suffix === 'M') {
+                                counter.textContent = (count / 1000000).toFixed(1) + suffix;
+                            } else if (suffix === 'K') {
+                                counter.textContent = (count / 1000).toFixed(1) + suffix;
+                            } else {
+                                counter.textContent = Math.floor(count) + suffix;
+                            }
+                        }
+                    }, 16);
+                }
+            });
+        }
+
+        // Progress Dots Animation
+        function startProgressDots() {
+            const dots = document.querySelectorAll('.progress-dot');
+            let currentReel = 1;
+
+            function updateDots() {
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[currentReel - 1].classList.add('active');
+                currentReel = (currentReel % 3) + 1;
+            }
+
+            updateDots();
+            setInterval(updateDots, 10000); // Sync with 10s per reel
+        }
+
+        // Phone hover effects
+        document.querySelectorAll('.phone-mockup').forEach(phone => {
+            phone.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+                this.style.transform = 'rotateY(10deg) rotateX(10deg) translateY(-10px)';
+            });
+            
+            phone.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+                this.style.transform = 'rotateY(-5deg) rotateX(5deg)';
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('button');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.className = 'md:hidden absolute top-full left-0 w-full glass-light border-t border-gray-200';
+        mobileMenu.innerHTML = `
+            <div class="flex flex-col space-y-4 p-6">
+                <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition-colors">Portfolio</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+            </div>
+        `;
+        mobileMenu.style.display = 'none';
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.parentNode.appendChild(mobileMenu);
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                if (mobileMenu.style.display === 'none') {
+                    mobileMenu.style.display = 'block';
+                } else {
+                    mobileMenu.style.display = 'none';
+                }
+            });
+        }
+
+        // Performance optimization
+        let ticking = false;
+        
+        function updateAnimations() {
+            const phones = document.querySelectorAll('.phone-float');
+            phones.forEach(phone => {
+                if (phone.getBoundingClientRect().top < window.innerHeight && 
+                    phone.getBoundingClientRect().bottom > 0) {
+                    phone.style.animationPlayState = 'running';
+                } else {
+                    phone.style.animationPlayState = 'paused';
+                }
+            });
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateAnimations);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestTick);
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.animate-fadeInUp').forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            updateAnimations();
+        });
+
+        // Responsive image loading
+        function loadImages() {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // Error handling for images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.style.display = 'none';
+                console.log('Image failed to load:', this.src);
+            });
+        });
+
+        loadImages();
     </script>
 </body>
 </html>
